@@ -1,32 +1,21 @@
-# Radius server
+# Captive portal in nodejs
 
-install nvm and then nodejs
+to run the project on localhost
 ```bash
-wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-```
-
-loads nvm
-```bash
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+npm run dev
 ```
 
 go to the project folder, and then install the project
 ```bash
-cd radius-node && npm i # or I recommend pnpm
+npm install # I recommend pnpm or bun
 ```
 
 initialize the prism
 ```bash
-npx prisma generate
+npx prisma generate && npx prisma migrate dev --name init
 ```
 
 run docker compose
 ```bash
 docker compose up -d
-```
-
-get a list of containers from docker
-```bash
-docker ps
 ```
