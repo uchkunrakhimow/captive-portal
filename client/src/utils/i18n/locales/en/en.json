@@ -1,0 +1,50 @@
+{
+  "auth": {
+    "login": {
+      "title": "Public free wifi",
+      "description": "To use it fully, authorization via SMS is required, according to the legislation of Uzbekistan."
+    },
+    "phone_number": "Phone number",
+    "send_sms": "Send SMS",
+    "sms": {
+      "success": "SMS sent successfully",
+      "resent_success": "SMS successfully resent",
+      "error": {
+        "title": "Error sending SMS",
+        "description": "Please try again later."
+      }
+    },
+    "otp": {
+      "title": "Enter the OTP",
+      "description": "Please enter the one-time password we sent to your phone.",
+      "resend_prompt": "Haven't received it?",
+      "resend_link": "Resend a new code.",
+      "verify": "Verify",
+      "success": "OTP verified successfully",
+      "invalid": "Invalid OTP",
+      "error": {
+        "title": "Error verifying OTP",
+        "description": "Please try again",
+        "enter_code": "Please enter your OTP code.",
+        "400": {
+          "title": "The OTP you entered did not match",
+          "description": "Please try again"
+        }
+      }
+    }
+  },
+  "legal": {
+    "terms_of_use": "Terms of use",
+    "privacy_policy": "Privacy policy",
+    "privacy_policy_details": {
+      "title": "Article 271",
+      "description": "Special conditions for processing personal data of citizens of the Republic of Uzbekistan. The owner and (or) operator, when processing personal data of citizens of the Republic of Uzbekistan using information technology, including the worldwide information network Internet, is obliged to ensure their collection, systematization, and storage in personal data databases on technical means physically located on the territory of the Republic of Uzbekistan and registered in the manner prescribed in the State Register of personal data databases. (Article 271 introduced by the Law of the Republic of Uzbekistan dated January 14, 2021 No. ZRU-666 — National Database of Legislation, 15.01.2021, No. 03/21/666/0032 — Effective from April 16, 2021)"
+    },
+    "using_site_agreement": "By using this site you agree to our",
+    "and": "and"
+  },
+  "footer": {
+    "copyright": "All rights reserved."
+  },
+  "change_language": "Change language"
+}

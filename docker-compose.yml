@@ -1,0 +1,72 @@
+services:
+  radius-node:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '80:80'
+    networks:
+      wifi-network:
+        ipv4_address: '172.99.0.2'
+    volumes:
+      - .:/usr/src/radius-server
+      - /tmp/:/usr/src/radius-server/src/storage
+    env_file:
+      - .env
+
+  db:
+    image: mysql:latest
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'radius'
+      MYSQL_ROOT_PASSWORD: 'rootpasswd'
+      TZ: 'Asia/Tashkent'
+    ports:
+      - '3306:3306'
+    networks:
+      wifi-network:
+        ipv4_address: '172.99.0.3'
+    volumes:
+      - my-db:/var/lib/mysql
+      - ./mysql:/root/mysql
+#    command: --default-authentication-plugin=mysql_native_password
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 30s
+      retries: 5
+
+  radius:
+    build:
+      context: ./radius
+    restart: always
+    ports:
+      - "1812:1812/tcp"
+      - "1812:1812/udp"
+      - "1813:1813/tcp"
+      - "1813:1813/udp"
+    volumes:
+      - /radiusconfs:/radiusconfs
+    networks:
+      wifi-network:
+        ipv4_address: '172.99.0.4'
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - "8080:8080"
+    networks:
+      wifi-network:
+        ipv4_address: '172.99.0.5'
+
+volumes:
+  my-db:
+
+networks:
+  wifi-network:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: '172.99.0.0/27'
+          gateway: '172.99.0.1'

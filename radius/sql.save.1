@@ -1,0 +1,42 @@
+sql {
+	dialect = "mysql"
+	driver = "${dialect}"
+	$INCLUDE ${modconfdir}/sql/main/${dialect}
+/etc/freeradius/mods-config/sql/main/	server = "172.99.0.3"
+	port = 3306
+	login = "root"
+	password = "rootpasswd"
+
+	radius_db = "radius"
+
+	acct_table1 = "radacct"
+	acct_table2 = "radacct"
+
+	postauth_table = "radpostauth"
+
+	authcheck_table = "radcheck"
+	groupcheck_table = "radgroupcheck"
+
+	authreply_table = "radreply"
+	groupreply_table = "radgroupreply"
+
+	usergroup_table = "radusergroup"
+
+	read_groups = yes
+	read_profile = yes
+
+	pool {
+		start = 0
+		min = 0
+		spare = 1
+		uses = 0
+		retry_delay = 30
+		lifetime = 0
+		idle_timeout = 60
+		connect_timeout = 3.0
+	}
+
+	group_attribute = "${.:instance}-Group"
+
+	$INCLUDE ${modconfdir}/${.:name}/main/${dialect}/queries.conf
+}
