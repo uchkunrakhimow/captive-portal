@@ -2,7 +2,7 @@ import { Card } from '@/components/ui/card';
 import { OtpForm } from './components/otp-form';
 import { useTranslation } from 'react-i18next';
 
-export default function Otp() {
+export default function otp() {
   const { t } = useTranslation();
 
   return (

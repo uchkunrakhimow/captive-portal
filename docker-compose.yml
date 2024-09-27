@@ -20,6 +20,7 @@ services:
     environment:
       MYSQL_DATABASE: 'radius'
       MYSQL_ROOT_PASSWORD: 'rootpasswd'
+      TZ: 'Asia/Tashkent'
     ports:
       - '3306:3306'
     networks:
@@ -28,25 +29,11 @@ services:
     volumes:
       - my-db:/var/lib/mysql
       - ./mysql:/root/mysql
+    #    command: --default-authentication-plugin=mysql_native_password
     healthcheck:
       test: ['CMD', 'mysqladmin', 'ping', '-h', 'localhost']
       interval: 30s
       retries: 5
-
-  radius:
-    build:
-      context: ./radius
-    restart: always
-    ports:
-      - '1812:1812/tcp'
-      - '1812:1812/udp'
-      - '1813:1813/tcp'
-      - '1813:1813/udp'
-    volumes:
-      - /radiusconfs:/radiusconfs
-    networks:
-      wifi-network:
-        ipv4_address: '172.99.0.4'
 
   adminer:
     image: adminer

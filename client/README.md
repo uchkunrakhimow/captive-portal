@@ -1,1 +1,0 @@
-# Client part of captive portal nodejs

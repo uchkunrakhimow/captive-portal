@@ -1,42 +1,50 @@
 {
-  "name": "captive-portal",
+  "name": "radius-node",
   "version": "1.0.3",
   "private": true,
-  "main": "dist/server.js",
+  "main": "dist/index.js",
   "scripts": {
     "dev:client": "cd client && npm run dev",
-    "server:dev": "npx nodemon src/server.ts",
+    "server:dev": "bun run --watch src/index.ts",
     "dev": "concurrently \"npm run dev:client\" \"npm run server:dev\"",
     "dev:build": "tsc",
+    "dev:prod": "pm2 start src/index.ts",
     "build": "rm -rf dist && npm run dev:build && cd client && rm -rf dist && npm run build",
-    "server:start": "node dist/server.js",
-    "server:format": "prettier --write ."
+    "server:start": "node dist/index.js",
+    "server:format": "prettier --write .",
+    "lint": "eslint . --ext .ts,.js",
+    "lint:fix": "eslint . --ext .ts,.js --fix"
   },
   "author": "Uchkun Rakhimov <uchkunrakhimov@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@prisma/client": "^5.18.0",
-    "axios": "^1.7.2",
+    "axios": "^1.7.7",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
-    "express": "^4.19.2",
+    "express": "^4.21.0",
     "express-winston": "^4.2.0",
-    "multer": "1.4.5-lts.1",
+    "mongoose": "^8.7.0",
     "node-unifi": "^2.5.1",
     "uuid": "^10.0.0",
-    "winston": "^3.13.0"
+    "winston": "^3.14.2"
   },
   "devDependencies": {
     "@types/cors": "^2.8.17",
-    "@types/express": "^4.17.21",
-    "@types/multer": "^1.4.11",
-    "@types/node": "^22.1.0",
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.7.4",
     "@types/uuid": "^10.0.0",
-    "concurrently": "^8.2.2",
-    "nodemon": "^3.1.4",
-    "prettier": "^3.3.2",
-    "prisma": "^5.18.0",
+    "concurrently": "^9.0.1",
+    "prettier": "^3.3.3",
     "ts-node": "^10.9.2",
-    "typescript": "^5.5.2"
+    "typescript": "^5.6.2",
+    "eslint": "^9.11.1",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-import": "^2.30.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^7.1.0",
+    "eslint-plugin-typescript": "^0.14.0",
+    "@typescript-eslint/eslint-plugin": "^8.7.0",
+    "@typescript-eslint/parser": "^8.7.0"
   }
 }

@@ -1,4 +1,0 @@
--- AlterTable
-ALTER TABLE `Post` ADD COLUMN `ap` VARCHAR(191) NULL,
-    ADD COLUMN `macAddress` VARCHAR(191) NULL,
-    ADD COLUMN `ssid` VARCHAR(191) NULL;

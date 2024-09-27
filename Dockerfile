@@ -1,9 +1,9 @@
-FROM node:20
+FROM node:22
 
 ENV TZ=Asia/Tashkent
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ >/etc/timezone
 
-WORKDIR /usr/src/captive-portal
+WORKDIR /usr/src/radius-server
 COPY . .
 COPY ./radius/sql /etc/freeradius/mods-available/sql
 COPY ./radius/default /etc/freeradius/sites-available/default

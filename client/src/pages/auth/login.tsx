@@ -51,7 +51,7 @@ export default function Login() {
         toast({
           variant: 'destructive',
           title: t('auth.sms.error.title'),
-          description: t('auth.sms.error.title.description'),
+          description: t('auth.sms.error.description'),
         });
       }
     } else {
