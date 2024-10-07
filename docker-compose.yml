@@ -38,3 +38,5 @@ volumes:
   dbdata:
 networks:
   radius-network:
+  wifi-network:
+    driver: bridge
