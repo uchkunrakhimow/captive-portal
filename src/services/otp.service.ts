@@ -1,8 +1,8 @@
 import axios from 'axios';
 import { v4 } from 'uuid';
-import { config } from '@/config';
-import { generateNum } from '@/helpers/numGenerator';
-import PostModel from '@/models/post.model';
+import { config } from '../config';
+import { generateNum } from '../helpers/numGenerator';
+import PostModel from '../models/post.model';
 
 export const sendOTP = async (
   phoneNumber: string,

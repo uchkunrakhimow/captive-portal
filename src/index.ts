@@ -4,6 +4,7 @@ import express, {
   NextFunction,
   Response,
   urlencoded,
+  static as static_,
 } from 'express';
 import { logger } from 'express-winston';
 import winston from 'winston';
@@ -13,12 +14,13 @@ import { join } from 'node:path';
 import cors from 'cors';
 import { connect } from 'mongoose';
 
-import auth from '@/routes/auth.route';
+import auth from './routes/auth.route';
 
 const app: Application = express();
 
 const PORT = process.env.PORT || 3001;
 const MONGO_URL = process.env.MONGO_URL!;
+const clientDistDir = join(__dirname, '..', 'client', 'dist');
 
 const controller: any = new Unifi.Controller({
   host: process.env.UNIFI_HOST,
@@ -56,6 +58,7 @@ app.use(
     colorize: false,
   }),
 );
+app.use(static_(clientDistDir));
 
 app.use(
   '/auth',

@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
-import { sendOTP, verifyOTP } from '@/services/otp.service';
-import { authorize_guest } from '@/services/unifi.service';
-import PostModel from '@/models/post.model';
+import { sendOTP, verifyOTP } from '../services/otp.service';
+import { authorize_guest } from '../services/unifi.service';
+import PostModel from '../models/post.model';
 
 export const login = async (req: Request, res: Response): Promise<void> => {
   try {
