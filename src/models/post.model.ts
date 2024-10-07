@@ -3,7 +3,6 @@ import { Post } from '../types/post';
 
 const PostSchema: Schema<Post> = new Schema<Post>(
   {
-    id: { type: Number, required: true, unique: true },
     phoneNum: { type: String, required: true },
     clientIp: { type: String },
     otp: { type: String },

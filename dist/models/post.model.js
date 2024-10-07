@@ -25,7 +25,6 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose_1 = __importStar(require("mongoose"));
 const PostSchema = new mongoose_1.Schema({
-    id: { type: Number, required: true, unique: true },
     phoneNum: { type: String, required: true },
     clientIp: { type: String },
     otp: { type: String },
