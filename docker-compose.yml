@@ -37,4 +37,4 @@ services:
 volumes:
   dbdata:
 networks:
-  crm-network:
+  radius-network:
