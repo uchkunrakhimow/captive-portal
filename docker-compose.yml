@@ -31,12 +31,9 @@ services:
     ports:
       - '8080:8080'
     networks:
-      wifi-network:
-        ipv4_address: '172.99.0.5'
+      - radius-network
 
 volumes:
   dbdata:
 networks:
   radius-network:
-  wifi-network:
-    driver: bridge
