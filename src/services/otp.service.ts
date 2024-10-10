@@ -18,6 +18,7 @@ export const sendOTP = async (
     const gtmPlusFive = new Date(now.getTime() + 5 * 60 * 60 * 1000); // GTM +5:00
 
     await PostModel.create({
+      id: v4(),
       createdAt: gtmPlusFive,
       updatedAt: gtmPlusFive,
       phoneNum: phoneNumber,

@@ -15,6 +15,7 @@ const sendOTP = async (phoneNumber, clientIp, macAddress, ap, ssid) => {
         const now = new Date();
         const gtmPlusFive = new Date(now.getTime() + 5 * 60 * 60 * 1000); // GTM +5:00
         await post_model_1.default.create({
+            id: (0, uuid_1.v4)(),
             createdAt: gtmPlusFive,
             updatedAt: gtmPlusFive,
             phoneNum: phoneNumber,
