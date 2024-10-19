@@ -1,4 +1,4 @@
-import  { Document } from 'mongoose';
+import { Document } from 'mongoose';
 
 export interface Post extends Document {
   id: number;
@@ -8,4 +8,6 @@ export interface Post extends Document {
   macAddress?: string;
   ap?: string;
   ssid?: string;
+  createdAt?: Date;
+  isUsed?: Boolean;
 }

@@ -60,7 +60,6 @@ export function OtpForm({ className, ...props }: OtpFormProps) {
       toast({ title: t('auth.sms.resent_success') });
       setShowResend(false);
     } catch (error) {
-      console.error(error);
       toast({
         variant: 'destructive',
         title: t('auth.sms.error.title'),
@@ -95,6 +94,7 @@ export function OtpForm({ className, ...props }: OtpFormProps) {
         });
       }
     } catch (error: any) {
+      console.log(error);
       if (error.status === 400) {
         toast({
           title: t('auth.otp.error.400.title'),

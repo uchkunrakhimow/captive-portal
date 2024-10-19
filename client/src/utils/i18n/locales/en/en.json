@@ -27,7 +27,7 @@
         "description": "Please try again",
         "enter_code": "Please enter your OTP code.",
         "400": {
-          "title": "The OTP you entered did not match",
+          "title": "OTP has expired.",
           "description": "Please try again"
         }
       }

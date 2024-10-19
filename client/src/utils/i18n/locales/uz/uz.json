@@ -27,7 +27,7 @@
         "description": "Iltimos, qayta urinib ko'ring.",
         "enter_code": "Iltimos, bir martalik kodni kiriting.",
         "400": {
-          "title": "Siz kiritgan bir martalik parol mos kelmadi",
+          "title": "Bir martalik parol eskirgan",
           "description": "Iltimos, qayta urinib ko'ring."
         }
       }

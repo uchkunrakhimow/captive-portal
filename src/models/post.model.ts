@@ -9,6 +9,8 @@ const PostSchema: Schema<Post> = new Schema<Post>(
     macAddress: { type: String },
     ap: { type: String },
     ssid: { type: String },
+    createdAt: { type: Date, default: Date.now, expires: '10m' },
+    isUsed: { type: Boolean, default: false },
   },
   { timestamps: true, versionKey: false, collection: 'post' },
 );

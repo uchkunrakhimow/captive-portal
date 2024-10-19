@@ -21,6 +21,7 @@ export const sendOTP = async (
       macAddress,
       ap,
       ssid,
+      isUsed: false,
     });
   } catch (dbError) {
     console.error('Database error:', dbError);
@@ -55,22 +56,5 @@ export const sendOTP = async (
       });
   } catch (smsError: any) {
     throw new Error(smsError);
-  }
-};
-
-export const verifyOTP = async (
-  phoneNumber: string,
-  otp: string,
-): Promise<boolean> => {
-  try {
-    const record = await PostModel.findOne({
-      phoneNum: phoneNumber,
-      otp: otp,
-    });
-
-    return !!record;
-  } catch (dbError: any) {
-    console.error('Database error:', dbError.message);
-    throw new Error('Failed to verify OTP');
   }
 };
