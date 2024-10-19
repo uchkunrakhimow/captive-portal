@@ -1,0 +1,39 @@
+services:
+  radius-node:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '80:3000'
+    volumes:
+      - .:/usr/src/radius
+    env_file:
+      - .env
+    depends_on:
+      - db
+    restart: always
+    networks:
+      - radius-network
+
+  db:
+    image: mongo:latest
+    ports:
+      - '27017:27017'
+    volumes:
+      - dbdata:/data/db
+    restart: always
+    networks:
+      - radius-network
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - '8080:8080'
+    networks:
+      - radius-network
+
+volumes:
+  dbdata:
+networks:
+  radius-network:

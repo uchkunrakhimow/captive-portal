@@ -1,0 +1,50 @@
+{
+  "auth": {
+    "login": {
+      "title": "Jamoat bepul wifiyi",
+      "description": "To'liq foydalanish uchun, O'zbekiston Respublikasi qonunchiligiga ko'ra SMS orqali tasdiqlash talab qilinadi."
+    },
+    "phone_number": "Telefon raqam",
+    "send_sms": "SMS yuborish",
+    "sms": {
+      "success": "SMS muvaffaqiyatli yuborildi",
+      "resent_success": "SMS muvaffaqiyatli qayta yuborildi",
+      "error": {
+        "title": "SMS yuborishda xatolik yuz berdi",
+        "description": "Iltimos keyinroq qayta urinib ko'ring."
+      }
+    },
+    "otp": {
+      "title": "Bir martalik kodni kiriting",
+      "description": "Iltimos telefoningizga yuborilgan bir martalik parolni kiriting.",
+      "resend_prompt": "Qabul qilmadingizmi?",
+      "resend_link": "Yangi kodni qayta yuboring.",
+      "verify": "Tasdiqlash",
+      "success": "Muvaffaqiyatli tasdiqlandi",
+      "invalid": "Bir martalik kod noto'g'ri",
+      "error": {
+        "title": "Bir martalik kodni tasdiqlashda xatolik",
+        "description": "Iltimos, qayta urinib ko'ring.",
+        "enter_code": "Iltimos, bir martalik kodni kiriting.",
+        "400": {
+          "title": "Siz kiritgan bir martalik parol mos kelmadi",
+          "description": "Iltimos, qayta urinib ko'ring."
+        }
+      }
+    }
+  },
+  "legal": {
+    "terms_of_use": "Foydalanish shartlari",
+    "privacy_policy": "Maxfiylik siyosati",
+    "privacy_policy_details": {
+      "title": "271-modda",
+      "description": "O'zbekiston Respublikasi fuqarolarining shaxsiy ma'lumotlarini qayta ishlashning maxsus shartlari. Axborot texnologiyalaridan, shu jumladan butunjahon axborot tarmog'idan foydalangan holda O'zbekiston Respublikasi fuqarolarining shaxsiy ma'lumotlarini qayta ishlashda egasi va (yoki) operator ularning yig'ilishi, tizimlashtirilishi va shaxsiy ma'lumotlar bazalarida saqlanishini ta'minlashi shart. O'zbekiston Respublikasi hududida joylashgan va shaxsiy ma'lumotlar bazalarining Davlat reyestrida belgilangan tartibda ro'yxatdan o'tgan texnik vositalarda joylashgan. (271-modda O'zbekiston Respublikasi Qonuni bilan kiritilgan 2021 yil 14 yanvardagi ZRU-666-son — Qonunchilikning Milliy Ma'lumotlar Bazasi, 15.01.2021, № 03/21/666/0032 — 2021 yil 16 apreldan kuchga kiradi)"
+    },
+    "using_site_agreement": "Ushbu saytdan foydalanish orqali siz bizning shartlarimizga rozilik bildirasiz",
+    "and": "va"
+  },
+  "footer": {
+    "copyright": "Barcha huquqlar himoyalangan."
+  },
+  "change_language": "Tilni o'zgartirish"
+}

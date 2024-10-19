@@ -1,0 +1,38 @@
+{
+  "name": "radius-node",
+  "version": "1.0.3",
+  "private": true,
+  "main": "dist/index.js",
+  "scripts": {
+    "dev:client": "cd client && npm run dev",
+    "server:dev": "bun run --watch src/index.ts",
+    "dev": "concurrently \"npm run dev:client\" \"npm run server:dev\"",
+    "dev:build": "tsc",
+    "dev:prod": "pm2 start src/index.ts",
+    "build": "rm -rf dist && npm run dev:build && cd client && rm -rf dist && npm run build",
+    "server:start": "node dist/index.js",
+    "server:format": "prettier --write ."
+  },
+  "author": "Uchkun Rakhimov <uchkunrakhimov@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.7.7",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0",
+    "express-winston": "^4.2.0",
+    "mongoose": "^8.7.0",
+    "node-unifi": "^2.5.1",
+    "uuid": "^10.0.0",
+    "winston": "^3.14.2"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.7.4",
+    "@types/uuid": "^10.0.0",
+    "concurrently": "^9.0.1",
+    "prettier": "^3.3.3",
+    "typescript": "^5.6.2"
+  }
+}
